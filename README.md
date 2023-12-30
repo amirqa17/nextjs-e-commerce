@@ -1,34 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Commerce Platform with Next.js, Tailwind CSS, and FreedomPay API
 
-## Getting Started
+![E-Commerce Platform](/path/to/your/image.png)
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This project showcases an E-commerce platform developed with Next.js, utilizing Tailwind CSS, Lazy Loading, and integration with the FreedomPay API. Reviews and items are efficiently stored in Firebase's Firestore database.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Brief Use Case of this Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Items
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Users can seamlessly view all items with brief descriptions and prices.
+- Intuitive sorting options enable users to categorize items by category.
+- Detailed individual pages for each item provide a comprehensive view with full descriptions and image galleries.
 
-## Learn More
+### Reviews
 
-To learn more about Next.js, take a look at the following resources:
+- Users can effortlessly view reviews and ratings on individual item pages.
+- Interactive features allow users to leave their own reviews and ratings.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Cart
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Users can easily add items to their cart.
+- A user-friendly cart interface allows users to view all items added to the cart.
+- Users can proceed to checkout from the cart.
+- Admins receive detailed email notifications, including a list of items, order ID, delivery address, individual and total prices upon completion of an order.
 
-## Deploy on Vercel
+### Checkout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Users can review their orders, including a list of items.
+- Users can fill in delivery information.
+- Users can seamlessly proceed to the payment page.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Payment
+
+- Users can pay for orders using VISA/MasterCard debit/credit cards and Samsung Pay.
+
+## Setting up the Environment
+
+1. **Clone this Project:**
+    ```bash
+    git clone https://github.com/amirqa17/nextjs-e-commerce.git
+    ```
+
+2. **Install packages:**
+    ```bash
+    npm install
+    ```
+
+3. **Create 2 collections in your Firestore:**
+   - `items` with the following fields:
+     ```bash
+     available (Boolean)
+     briefcontent (String)
+     category (String)
+     complect (String)
+     description (String)
+     id (Number)
+     image (String)
+     images (Array)
+     imagesItem (Array)
+     manufacturer (String)
+     name (String)
+     price (String)
+     slug (String)
+     type (String)
+     ```
+
+   - `product_reviews` with the following fields:
+     ```bash
+     createdAt (Timestamp)
+     email (String)
+     phone (String)
+     product_slug (String)
+     rating (Number)
+     review_text (String)
+     review_title (String)
+     username (String)
+     ```
+
+4. **Set up your credentials for the database in `Firebase.js`.**
+5. **Set up your credentials for FreedomPay in `Freedompay.js`.**
+6. **Set up your credentials for SendinBlue Email notifications in `Checkout.js`.**
+7. **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+  
