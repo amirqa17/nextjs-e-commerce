@@ -1,6 +1,7 @@
 # E-Commerce Platform with Next.js, Tailwind CSS, and FreedomPay API
-
-![E-Commerce Platform](/path/to/your/image.png)
+Please note that this project will be reviewed every week, during weekend. 
+There are plenty of things that will be fixed (mainly layout and the structure of the project itself).
+Please stay updated on the changes as the are a lot of interesting things that can be done to improve the project significantly.
 
 ## Project Overview
 
