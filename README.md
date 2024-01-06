@@ -1,7 +1,7 @@
 # E-Commerce Platform with Next.js, Tailwind CSS, and FreedomPay API
-Please note that this project will be reviewed every week, during weekend. 
+## Please note that this project will be reviewed monthly/weekly, when I have time. 
 There are plenty of things that will be fixed (mainly layout and the structure of the project itself).
-Please stay updated on the changes as the are a lot of interesting things that can be done to improve the project significantly.
+Please stay updated on the changes as there are a lot of interesting things that can be done to improve the project significantly.
 
 ## Project Overview
 
