@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { formatPrice } from "../../context/formatPrice";
+import { formatPrice } from "../../../context/formatPrice";
 import FreedomPayPayment from "./freedompay";
 
 function Payment({ onPrevious, formData, cartItems, getTotalCost }) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
-import { formatPrice } from "../../context/formatPrice";
+import { CartContext } from "../../../context/CartContext";
+import { formatPrice } from "../../../context/formatPrice";
 import Link from "next/link";
 import Image from "next/image";
 

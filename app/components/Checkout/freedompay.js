@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import CryptoJS from "crypto-js";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../../context/CartContext";
 import { ClipLoader } from "react-spinners";
 import dotenv from "dotenv";
 dotenv.config();

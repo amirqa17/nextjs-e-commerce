@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ShoppingItem from "./ShoppingItem";
-import { shoppingItems } from "../../itemsfirebase";
+import ShoppingItem from "./Item";
 import { RiseLoader } from "react-spinners";
-
-import { shoppingItemsRef } from "../../itemsfirebase";
+import { shoppingItemsRef } from "../../../itemsfirebase";
 
 function shuffleArray(array) {
   let shuffledArray = [...array];
@@ -77,7 +75,7 @@ function ShoppingList() {
         </p>
       </div>
 
-      <div className="flex flex-wrap lg:w-full mx-auto  justify-center bg-gray-100">
+      <div className="flex flex-wrap lg:w-full mx-auto  justify-center bg-gray-200">
         <div className="sub-navbar px-8 bg-gray-100 pt-4 pb-4 lg:w-full">
           <div className="flex flex-col items-center md:flex-row md:justify-center">
             <button

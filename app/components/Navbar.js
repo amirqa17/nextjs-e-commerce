@@ -30,32 +30,7 @@ function Navbar() {
             <div className="text-lg">Amir Ibraimov</div>
           </div>
         </Link>
-        <div class="ml-4 text-black hidden md:block">
-          <div class="text-sm font-semibold">
-            <span class="inline-flex items-center text-gray-700">
-              <AiOutlineFieldTime class="mr-2 h-4 w-4" />
-              <span>Work hours: 9:00 - 21:00</span>
-            </span>
-          </div>
-          <div class="text-sm font-semibold mt-2">
-            <span class="inline-flex items-center text-gray-700">
-              <HiLocationMarker class="mr-2 h-4 w-4" />
-              <span>Kazakhstan, Oskemen city</span>
-            </span>
-          </div>
-          <div class="text-sm font-semibold mt-2">
-            <span class="inline-flex items-center text-gray-700">
-              <AiFillPhone class="mr-2 h-4 w-4" />
-              <span>+81 (070) 31371220</span>
-            </span>
-          </div>
-          <div class="text-sm font-semibold mt-2">
-            <span class="inline-flex items-center text-gray-700">
-              <TbTruckDelivery class="mr-2 h-4 w-4" />
-              <span>Free delivery across Kazakhstan</span>
-            </span>
-          </div>
-        </div>
+       
 
         {/* Hamburger Menu for Mobile */}
 

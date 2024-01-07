@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
-import { formatPrice } from "../../context/formatPrice";
+import { CartContext } from "../../../context/CartContext";
+import { formatPrice } from "../../../context/formatPrice";
 import Image from "next/image";
 
 const CartItems = () => {

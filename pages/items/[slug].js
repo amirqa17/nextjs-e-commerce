@@ -1,5 +1,5 @@
 import React from "react";
-import ItemDetail from "../../app/components/ItemDetail";
+import ItemDetail from "../../app/components/Items/ItemDetail";
 import Layout from "../../app/layout";
 const ItemIndividualPage = () => {
   return (

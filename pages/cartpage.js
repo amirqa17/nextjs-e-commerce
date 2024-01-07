@@ -1,5 +1,5 @@
 import React from "react";
-import Cart from "../app/components/Cart.js";
+import Cart from "../app/components/Cart/Cart";
 import Layout from "../app/layout";
 import Head from "next/head.js";
 const CartPage = () => {

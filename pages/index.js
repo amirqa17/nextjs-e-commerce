@@ -3,8 +3,8 @@ import Link from "next/link";
 import React from "react";
 import Head from "next/head";
 import { RiArchiveDrawerLine } from "react-icons/ri";
-import Items from "../app/components/ShoppingList";
-import ShoppingList from "../app/components/ShoppingList";
+import Items from "../app/components/Items/itemList";
+import ShoppingList from "../app/components/Items/itemList";
 
 const Home = () => {
   return (
