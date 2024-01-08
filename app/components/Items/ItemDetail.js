@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import { shoppingItemsRef } from "../../itemsfirebase";
-import Layout from "../layout";
-import { CartContext } from "../../context/CartContext";
-import Review from "./Review";
+import { shoppingItemsRef } from "../../../itemsfirebase";
+import { CartContext } from "../../../context/CartContext";
+import Review from "../Review";
 import Head from "next/head";
 import Image from "next/image";
 import { RiseLoader } from "react-spinners";

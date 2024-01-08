@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import ShoppingItem from "./Item";
 import { RiseLoader } from "react-spinners";
 import { shoppingItemsRef } from "../../../itemsfirebase";
@@ -73,31 +73,29 @@ function ShoppingList() {
 
   return (
     <>
-       <div className="flex flex-wrap lg:w-full mx-auto justify-center bg-gray-100">
+      <div className="flex flex-wrap lg:w-full mx-auto justify-center bg-gray-100">
         <div className="sub-navbar px-8 bg-gray-600  lg:w-full">
-        
-        <section className="sub-navbar xl:bg-gray-600 pt-4 pb-4 lg:w-full space-x-2 md:space-x-14 flex flex-wrap justify-center">
-  {sortElements.map((element) => (
-    <button
-      key={element.title}
-      onClick={() => handleSort(element.category)}
-      type="button"
-      className={`mb-2 md:mb-0 inline-block font-medium rounded-full py-2 px-4 transition-colors duration-200 ease-in-out ${
-        sortType === element.category
-          ? "bg-pink-500 text-white shadow-md hover:bg-pink-600"
-          : "bg-white text-gray-800 shadow-sm hover:bg-pink-100 hover:text-pink-500"
-      }`}
-    >
-      {element.title}
-    </button>
-  ))}
-</section>
-          </div>
-          {filteredItems.map((item) => (
-            <ShoppingItem key={item.id} item={item} />
-          ))}
+          <section className="sub-navbar xl:bg-gray-600 pt-4 pb-4 lg:w-full space-x-2 md:space-x-14 flex flex-wrap justify-center">
+            {sortElements.map((element) => (
+              <button
+                key={element.title}
+                onClick={() => handleSort(element.category)}
+                type="button"
+                className={`mb-2 md:mb-0 inline-block font-medium rounded-full py-2 px-4 transition-colors duration-200 ease-in-out ${
+                  sortType === element.category
+                    ? "bg-pink-500 text-white shadow-md hover:bg-pink-600"
+                    : "bg-white text-gray-800 shadow-sm hover:bg-pink-100 hover:text-pink-500"
+                }`}
+              >
+                {element.title}
+              </button>
+            ))}
+          </section>
         </div>
-  
+        {filteredItems.map((item) => (
+          <ShoppingItem key={item.id} item={item} />
+        ))}
+      </div>
 
       <section className="flex justify-center items-center py-4 mx-auto ">
         <p className="text-gray-600 text-sm md:text-lg mx-auto ">
