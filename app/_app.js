@@ -1,16 +1,12 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router'; // Import useRouter from next/router
 import Layout from './layout';
 import Head from 'next/head';
-
+import { CartProvider } from "../context/CartContext";
 const App = ({ Component, pageProps }) => {
 
 
   return (
-    console.log("API Key:", process.env.REACT_APP_FIREBASE_API_KEY);
-    console.log("Auth Domain:", process.env.REACT_APP_FIREBASE_AUTH_DOMAIN);
-    // ... add logs for other variables
-    
+
+    <CartProvider>
       <Layout>
       <Head>
         <title>Amir Ibraimov</title>
@@ -19,7 +15,7 @@ const App = ({ Component, pageProps }) => {
       </Head>
         <Component {...pageProps} />
       </Layout>
-
+</CartProvider>
   );
 };
 
