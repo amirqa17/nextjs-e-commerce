@@ -90,6 +90,15 @@ function Checkout() {
 }
 
 function DeliveryInfo({ onNext, onDeliveryInputChange, formData }) {
+  const formInputs = [
+    { label: "First Name", type: "text", placeholder: "Receiver's firstname", name: "name" },
+    { label: "Last Name", type: "text", placeholder: "Receiver's lastname", name: "lastName" },
+    { label: "City", type: "text", placeholder: "Enter city of delivery", name: "city" },
+    { label: "Delivery Address", type: "text", placeholder: "Full address of delivery", name: "address" },
+    { label: "Phone number", type: "text", placeholder: "Receiver's phonenumber", name: "phone" },
+    { label: "ZIP Code", type: "text", placeholder: "ZIP code", name: "zip" },
+  ];
+
   function allFieldsFilled() {
     const fields = ["name", "lastName", "city", "address", "phone", "zip"];
     return fields.every((field) => formData[field].length > 0);
@@ -97,136 +106,41 @@ function DeliveryInfo({ onNext, onDeliveryInputChange, formData }) {
 
   return (
     <div className="justify-center items-center">
-      <div class="container mx-auto">
-        <div class="flex justify-center px-6 my-12">
-          <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-            <div class="w-full h-auto  hidden lg:block lg:w-4/12 bg-cover rounded-l-lg">
+      <div className="container mx-auto">
+        <div className="flex justify-center px-6 my-12">
+          <div className="w-full xl:w-3/4 lg:w-11/12 flex">
+            <div className="w-full h-auto  hidden lg:block lg:w-4/12 bg-cover rounded-l-lg">
+              {/* Assuming CartItems component is imported correctly */}
               <CartItems />
             </div>
 
-            <div class="w-full lg:w-7/12 bg-white  rounded-lg lg:rounded-l-none">
+            <div className="w-full lg:w-7/12 bg-white rounded-lg lg:rounded-l-none">
               <h3 className="pt-4 text-2xl text-center text-black">
                 <span className="text-2xl align-middle mr-2"></span>
                 Delivery information
               </h3>
-              <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
-                <div class="mb-4">
-                  <label
-                    class="block mb-2 text-sm font-bold text-gray-700"
-                    for="firstname"
-                  >
-                    First Name
-                  </label>
-                  <input
-                    class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="firstname"
-                    type="text"
-                    placeholder="Receiver's firstname"
-                    name="name"
-                    value={formData.name}
-                    onChange={onDeliveryInputChange}
-                    required
-                  />
-                </div>
-                <div class="mb-4">
-                  <label
-                    class="block mb-2 text-sm font-bold text-gray-700"
-                    for="lastName"
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="lastname"
-                    type="text"
-                    placeholder="Receiver's lastname"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={onDeliveryInputChange}
-                    required
-                  />
-                </div>
-
-                <div class="mb-4">
-                  <label
-                    class="block mb-2 text-sm font-bold text-gray-700"
-                    for="city"
-                  >
-                    City
-                  </label>
-                  <input
-                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="city"
-                    type="text"
-                    placeholder="Enter city of delivery"
-                    name="city"
-                    value={formData.city}
-                    onChange={onDeliveryInputChange}
-                    required
-                  />
-                </div>
-                <div class="mb-4">
-                  <label
-                    class="block mb-2 text-sm font-bold text-gray-700"
-                    for="address"
-                  >
-                    Delivery Address
-                  </label>
-                  <input
-                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="address"
-                    type="text"
-                    placeholder="Full address of delivery"
-                    name="address"
-                    value={formData.address}
-                    onChange={onDeliveryInputChange}
-                    required
-                  />
-                </div>
-
-                <div class="mb-4">
-                  <label
-                    class="block mb-2 text-sm font-bold text-gray-700"
-                    for="phoneNumber"
-                  >
-                    Phone number
-                  </label>
-                  <input
-                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="phoneNumber"
-                    type="text"
-                    placeholder="Receiver's phonenumber"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={onDeliveryInputChange}
-                    required
-                  />
-                </div>
-                <div class="mb-4">
-                  <label
-                    class="block mb-2 text-sm font-bold text-gray-700"
-                    for="zip"
-                  >
-                    ZIP Code
-                  </label>
-                  <input
-                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="zip"
-                    type="text"
-                    placeholder="ZIP code"
-                    name="zip"
-                    value={formData.zip}
-                    onChange={onDeliveryInputChange}
-                    required
-                  />
-                </div>
-
-                <div class="mb-6 text-center">
+              <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+                {formInputs.map((input) => (
+                  <div className="mb-4" key={input.name}>
+                    <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor={input.name}>
+                      {input.label}
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                      type={input.type}
+                      placeholder={input.placeholder}
+                      name={input.name}
+                      value={formData[input.name]}
+                      onChange={onDeliveryInputChange}
+                      required
+                    />
+                  </div>
+                ))}
+                <div className="mb-6 text-center">
                   <button
-                    disabled={!allFieldsFilled()} // disable the button if not all fields are filled
+                    disabled={!allFieldsFilled()}
                     onClick={() => {
                       if (allFieldsFilled()) {
-                        // Add your logic here for when all fields are filled
                         onNext(formData);
                       }
                     }}
@@ -239,7 +153,7 @@ function DeliveryInfo({ onNext, onDeliveryInputChange, formData }) {
                     Next
                   </button>
                 </div>
-                <hr class="mb-6 border-t" />
+                <hr className="mb-6 border-t" />
               </form>
             </div>
           </div>
@@ -248,5 +162,6 @@ function DeliveryInfo({ onNext, onDeliveryInputChange, formData }) {
     </div>
   );
 }
+
 
 export default Checkout;
