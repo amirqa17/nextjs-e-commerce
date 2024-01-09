@@ -36,8 +36,8 @@ const Cart = () => {
             >
               <div className="w-40 mr-6">
                 <Image
-                  height={200}
-                  width={200}
+                  height={150}
+                  width={150}
                   src={item.image}
                   alt="product-image"
                   className="w-full rounded-lg"

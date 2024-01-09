@@ -35,15 +35,15 @@ const Payment = () => {
                     src="/assets/freedompay.png" // Replace with the actual image source
                     alt="Payment Options"
                     className="w-48 h-auto md:w-64 md:h-auto mx-auto"
-                    height={200}
-                    width={200}
+                    height={150}
+                    width={150}
                   />
                   <Image
                     src="/assets/visa_mastercard.png" // Replace with the actual image source
                     alt="Payment Options"
                     className="w-32 h-auto md:w-64 md:h-auto mx-auto"
-                    height={200}
-                    width={200}
+                    height={150}
+                    width={150}
                   />
                 </div>
 

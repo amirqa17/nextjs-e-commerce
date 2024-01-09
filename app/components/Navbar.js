@@ -8,6 +8,7 @@ function Navbar() {
   const { getTotalQuantity } = useContext(CartContext);
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   const isLinkActive = (href) => router.pathname === href;
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -15,7 +16,7 @@ function Navbar() {
   const menuElements = [
     {
       href: "/",
-      title: "Home",
+      title: "Home", 
     },
     {
       href: "/payment",
@@ -68,7 +69,9 @@ function Navbar() {
 
   const cartMobile = (
     <Link href={cartElements[0].href} passHref className="flex items-center ">
+ 
       <span className="mr-2">
+   
         <Image
           src={cartElements[0].icon}
           alt="Cart Icon"
@@ -132,7 +135,7 @@ function Navbar() {
         </button>
         {/*Menu items desktop*/}
         <div className="hidden md:flex">{menuItems}</div>
-
+      
         {/*Cart desktop*/}
         <div className="hidden md:flex space-x-4">{cartItems}</div>
       </div>
@@ -140,9 +143,10 @@ function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden mt-4 flex flex-col space-y-4">
           {menuItems}
+    
         </div>
       )}
-      {/*Cart mobile*/}
+            {/*Cart mobile*/}
       <div className="md:hidden fixed bottom-4 right-4 bg-gray-300 p-4 rounded-full shadow-md z-50 ">
         {cartMobile}
       </div>

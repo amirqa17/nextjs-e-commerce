@@ -20,15 +20,15 @@ function Footer({ children }) {
             src="/assets/visa.png" // Replace with the actual image source
             alt="Payment Options"
             className="w-24 h-auto md:w-24 md:h-auto mx-auto"
-            height={200}
-            width={200}
+            height={150}
+            width={150}
           />
           <Image
             src="/assets/mc.png" // Replace with the actual image source
             alt="Payment Options"
             className="w-24 h-auto md:w-24 md:h-auto mx-auto"
-            height={200}
-            width={200}
+            height={150}
+            width={150}
           />
         </div>
 

@@ -20,15 +20,14 @@ function ShoppingItem({ item }) {
       <Link
         key={item.id}
         href={`/items/${item.slug}`}
-        prefetch
         className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl group  transition duration-500 ease-in-out transform group-hover:scale-110"
       >
         <Image
           src={item.image}
           alt={item.name}
           className="object-scale-down w-full h-full transition duration-500 ease-in-out transform group-hover:scale-110"
-          height={400}
-          width={400}
+          height={150}
+          width={150}
         />
         {item.available === false && (
           <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
@@ -37,7 +36,7 @@ function ShoppingItem({ item }) {
         )}
       </Link>
       <div className="mt-4 px-5 pb-5">
-        <Link key={item.id} href={`/items/${item.slug}`} prefetch>
+        <Link key={item.id} href={`/items/${item.slug}`}>
           <h5 className="text-xl tracking-tight text-slate-900 line-clamp-1">
             {item.name}
           </h5>
