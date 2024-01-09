@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head.js";
 import Layout from "../app/layout.js";
-import Checkout from "../app/components/Checkout.js";
+import Checkout from "../app/components/Checkout/Checkout.js";
 const CheckoutPage = () => {
   return (
     <Layout>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 
-import CartItems from "./CartItems";
+import CartItems from "../Cart/CartItems";
 
 import { CartContext } from "../../../context/CartContext";
 
