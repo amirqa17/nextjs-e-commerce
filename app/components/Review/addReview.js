@@ -4,6 +4,7 @@ import "firebase/firestore";
 import firebase from "firebase/compat/app";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
+
 const StarRating = ({ rating, onRatingChange }) => {
   const [hoverRating, setHoverRating] = useState(0);
 
@@ -53,7 +54,11 @@ const StarRating = ({ rating, onRatingChange }) => {
     }
   };
 
-  return <div className="flex items-center space-x-1">{[1, 2, 3, 4, 5].map((i) => renderStar(i))}</div>;
+  return (
+    <div className="flex items-center space-x-1">
+      {[1, 2, 3, 4, 5].map((i) => renderStar(i))}
+    </div>
+  );
 };
 
 const AddReview = ({ shoppingItem, onReviewAdded }) => {
@@ -106,7 +111,10 @@ const AddReview = ({ shoppingItem, onReviewAdded }) => {
       {formFields.map((field) => (
         <div key={field.name} className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor={`grid-${field.name}`}>
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor={`grid-${field.name}`}
+            >
               {field.label}
             </label>
             {field.type === "textarea" ? (
@@ -119,7 +127,6 @@ const AddReview = ({ shoppingItem, onReviewAdded }) => {
               />
             ) : field.type === "rating" ? (
               <div className="mb-4">
-             
                 <StarRating
                   rating={formData.rating}
                   onRatingChange={(rating) => handleChange("rating", rating)}
@@ -140,10 +147,16 @@ const AddReview = ({ shoppingItem, onReviewAdded }) => {
       ))}
       <div className="flex flex-wrap -mx-3 mb-2">
         <div className="w-full px-3">
-          <button type="submit" className="bg-pink-500 text-white px-4 py-2 rounded">
+          <button
+            onClick={handleSubmit}
+            className="bg-pink-500 text-white px-4 py-2 rounded"
+          >
             Leave Review
           </button>
-          <button onClick={onReviewAdded} className="bg-pink-500 text-white px-4 py-2 rounded ml-4">
+          <button
+            onClick={onReviewAdded}
+            className="bg-pink-500 text-white px-4 py-2 rounded ml-4"
+          >
             Close
           </button>
         </div>

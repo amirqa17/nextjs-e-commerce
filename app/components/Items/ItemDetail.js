@@ -7,25 +7,25 @@ import Head from "next/head";
 import Image from "next/image";
 import { RiseLoader } from "react-spinners";
 import { toast } from "react-toastify";
-
+import { ItemReviewAverage } from "../Review/starRating";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 const ItemDetail = () => {
   const { addToCart } = useContext(CartContext);
   const router = useRouter();
   const { slug } = router.query;
-
+  const [averageRating, setAverageRating] = useState(0); // New state for average rating
   const [item, setItem] = useState(null);
   const [isImageZoomed, setIsImageZoomed] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   useEffect(() => {
     if (slug) {
-      // Fetch the item with the specified slug from Firestore
       const fetchItem = async () => {
         try {
           const querySnapshot = await shoppingItemsRef
             .where("slug", "==", slug)
             .get();
-
+  
           if (!querySnapshot.empty) {
             const doc = querySnapshot.docs[0];
             setItem(doc.data());
@@ -39,6 +39,7 @@ const ItemDetail = () => {
       fetchItem();
     }
   }, [slug]);
+  
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
@@ -78,6 +79,12 @@ const ItemDetail = () => {
         {item.name}
         </h1>
         <div className="border-2 border-gray-200">
+        <div className="bg-white rounded-lg p-8">
+        <h2 className="text-2xl font-bold text-slate-900">
+      <ItemReviewAverage productSlug={item.slug} />
+        </h2>
+  
+      </div>
           <div className="flex flex-col md:flex-row mt-4">
             <div className="flex flex-col md:flex-row mx-auto">
               <div className="mx-auto">
