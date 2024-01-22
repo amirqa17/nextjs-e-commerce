@@ -67,32 +67,30 @@ const ItemDetail = () => {
     <>
       <Head>
         <title>
-          {item.name}　{item.category} - Amir Ibraimov
+          {item.name}
+          {item.category} - Amir Ibraimov
         </title>
         <meta name="description" content={item.description} />
       </Head>
 
-      <div className="w-full mx-auto px-4 py-4">
-        <div className="flex flex-wrap">
-        <h5 className="text-2xl tracking-tight text-slate-900 line-clamp-1 mx-auto">
-            {item.name}
-          </h5>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="flex flex-col md:flex-row px-12">
+      <div className="lg:w-9/12 mx-auto text-black">
+        <h1 className="text-3xl text-center font-bold text-slate-900 p-8">
+        {item.name}
+        </h1>
+        <div className="border-2 border-gray-200">
+          <div className="flex flex-col md:flex-row mt-4">
             <div className="flex flex-col md:flex-row mx-auto">
-              <div className="md:w-1/2 relative">
+              <div className="mx-auto">
                 <Image
                   src={selectedImageSrc}
                   alt={item.name}
-                  height={150}
-                  width={150}
-                  className="object-cover cursor-pointer"
+                  height={300}
+                  width={3000}
+                  className="w-80 h-80 object-scale-down cursor-pointer border-1"
                   onClick={() => setIsImageZoomed(!isImageZoomed)}
                 />
               </div>
-              <div className="md:w-full p-4">
+              <div className="md:w-full">
                 <div className="flex flex-wrap">
                   {item.imagesItem &&
                     item.imagesItem.map((image, index) => (
@@ -102,7 +100,7 @@ const ItemDetail = () => {
                         alt={item.name}
                         height={150}
                         width={150}
-                        className={`w-20 h-20 object-cover mx-1 my-1 cursor-pointer border ${
+                        className={`w-20 h-20 object-cover m-2 cursor-pointer border ${
                           selectedImageIndex === index
                             ? "border-black"
                             : "border-gray-300"
@@ -111,7 +109,54 @@ const ItemDetail = () => {
                       />
                     ))}
                 </div>
-                {/* Keep the rest of your content (title, description, price, button, etc.) */}
+
+                <div className="p-4">
+                  <span>
+                    <h2 className="text-1xl font-bold text-slate-900">
+                      Category:
+                    </h2>{" "}
+                    <p>{item.category}</p>
+                  </span>
+                  <span>
+                    <h2 className="text-1xl font-bold text-slate-900">
+                      Included:
+                    </h2>{" "}
+                    <p>{item.complect}</p>
+                  </span>
+                  <span>
+                    <h2 className="text-1xl font-bold text-slate-900">
+                      Description:
+                    </h2>{" "}
+                    <p>{item.description}</p>
+                  </span>
+                  <div className="flex flex-col items-center mx-auto">
+                    <h2 className="text-3xl font-bold text-slate-900 p-8">
+                      Price: {item.price}
+                    </h2>
+
+                    <button
+                      className="flex items-center mx-auto rounded-md bg-pink-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-300"
+                      onClick={handleAddToCart}
+                      disabled={!item.available}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="mr-2 h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
               </div>
               {isImageZoomed && (
                 <div
@@ -137,47 +182,6 @@ const ItemDetail = () => {
                 </div>
               )}
             </div>
-
-            {/* Rest of your item details rendering */}
-          </div>
-
-          <div className="p-4 text-black text-justify">
-            <p className="font-bold"> Category: </p> {item.category}
-            <p className="font-bold"> Included: </p> {item.complect}
-            <p className="font-bold"> Description:</p>
-            <p className="text-gray-700 text-base mb-4">{item.description}</p>
-            <div className="flex flex-wrap justify-between items-center">
-              <p className="text-black text-lg font-bold mb-4">
-                {item.content}
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-between items-center">
-              <p className="text-green-500 text-lg font-bold mb-4">
-                Price: {item.price} KZT
-                <button
-          className="flex items-center mx-auto justify-center rounded-md bg-pink-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-300"
-          onClick={handleAddToCart}
-          disabled={!item.available}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2 h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-            />
-          </svg>
-          Add to cart
-        </button>
-              </p>
-            </div>
-            <hr className="border-t-2 border-gray-400 my-8 mx-auto" />
           </div>
         </div>
 
